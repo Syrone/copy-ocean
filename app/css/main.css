@@ -10,12 +10,12 @@
   --fw-base: 400;
   --lh-base: 1.2;
   --h1: 2.75rem;
-  --text-color: #e5e5e5;
+  --text-color: #262626;
   --primary: #737373;
   --dark: #0a0a0a;
+  --dark-400: #404040;
   --dark-600: #262626;
-  --dark-700: #171717;
-  --body-bg: var(--dark);
+  --body-bg: #fff;
   --transition-duration: 300ms;
   --transition-timing-function: ease-in-out;
 }
@@ -629,8 +629,14 @@ p + p {
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center;
-  background-color: var(--dark-700);
+  background-color: var(--dark-600);
   overflow: hidden;
+  -webkit-transition-property: background-color;
+  transition-property: background-color;
+  -webkit-transition-duration: var(--transition-duration);
+  transition-duration: var(--transition-duration);
+  -webkit-transition-timing-function: var(--transition-timing-function);
+  transition-timing-function: var(--transition-timing-function);
 }
 .portfolio-item-picture {
   width: 44%;
@@ -659,6 +665,9 @@ p + p {
   display: block;
 }
 @media (hover: hover) {
+  .portfolio-item .stretched-link:is(:hover, :focus-visible) ~ .portfolio-item-body {
+    background-color: var(--dark-400);
+  }
   .portfolio-item .stretched-link:is(:hover, :focus-visible) ~ .portfolio-item-body .portfolio-item-picture {
     -webkit-filter: grayscale(0);
     filter: grayscale(0);

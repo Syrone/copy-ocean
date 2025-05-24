@@ -50,8 +50,12 @@
       aspect-ratio: 1.5013404825737264 / 1;
       display: flex;
       justify-content: center;
-      background-color: var(--dark-700);
+      background-color: var(--dark-600);
       overflow: hidden;
+
+      transition-property: background-color;
+      transition-duration: var(--transition-duration);
+      transition-timing-function: var(--transition-timing-function);
     }
 
     &-picture {
@@ -80,6 +84,7 @@
         &:is(:hover, :focus-visible) {
 
           ~ .portfolio-item-body {
+            background-color: var(--dark-400);
 
             .portfolio-item-picture {
               filter: grayscale(0);
