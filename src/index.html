@@ -11,14 +11,27 @@
       <main class="main">
         @include('partials/h1.html', {title: 'Home'})
         <div class="main-sections">
+          <section class="section hero">
+            <div class="container">
+              <div class="hero-body">
+                <div class="hero-start">
+                  <p>
+                    Explore ↓
+                  </p>
+                </div>
+                <div class="hero-end">
+                  <h2>
+                    Selected work
+                    <br>
+                    ©2023
+                  </h2>
+                </div>
+              </div>
+            </div>
+          </section>
+
           <section class="section portfolio">
             <div class="container">
-              <div class="section-header">
-                <h2 class="section-title">
-                  Work
-                </h2>
-              </div>
-
               <ol class="list-reset portfolio-list">
                 @loop('partials/cards/portfolio.html', [
                   {},
@@ -29,6 +42,65 @@
                   {},
                 ])
               </ol>
+            </div>
+          </section>
+
+          <section class="section services">
+            <div class="container">
+              <div class="services-start">
+                <h2>
+                  Services
+                </h2>
+              </div>
+              <div class="services-end">
+                <ul class="list-reset">
+                  <li>
+                    Art direction
+                  </li>
+                  <li>
+                    Brand identity
+                  </li>
+                  <li>
+                    Campaign
+                  </li>
+                  <li>
+                    Development
+                  </li>
+                  <li>
+                    Digital
+                  </li>
+                  <li>
+                    Editorial
+                  </li>
+                  <li>
+                    Motion
+                  </li>
+                  <li>
+                    Print & packaging
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="section about">
+            <div class="container">
+              <div class="about-start">
+                <h2>
+                  About me
+                </h2>
+              </div>
+              <div class="about-end">
+                <p>
+                  I collaborate with organizations that aim to impact positively and contribute to the communities they serve. My services focus on three key areas of expertise: designing and constructing digital products; cultivating digital-centric brands; and generating content that enriches the discourse of our era.
+                </p>
+                <p>
+                  I consider design collaborators, aiding brands and artists in crafting these visual realms. My most recent and impressive projects include esteemed clients such as Amazon, Microsoft, IKEA, Nike, and Google.
+                </p>
+                <p>
+                  If you'd like to know more about the chosen cases, or just want to say hello, please feel free to get in touch.
+                </p>
+              </div>
             </div>
           </section>
 

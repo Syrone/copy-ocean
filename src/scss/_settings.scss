@@ -39,13 +39,5 @@
 }
 
 .main {
-  margin-top: 18rem;
-
-  @include mixins.breakpoint-up(md) {
-    margin-top: 16.75rem;
-  }
-
-  @include mixins.breakpoint-up(xl) {
-    margin-top: 14.375rem;
-  }
+  margin-top: var(--offset-header)
 }

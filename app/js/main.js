@@ -129,9 +129,9 @@ _barba_core__WEBPACK_IMPORTED_MODULE_0__.init({
       container.classList.add('is-animate');
       (0,_animation_js__WEBPACK_IMPORTED_MODULE_1__.gradientWipeEnter)(container, ANIMATION_DURATION);
       setTimeout(() => {
-        container.classList.remove('is-animate');
         (0,_header_js__WEBPACK_IMPORTED_MODULE_2__.initHeader)();
         (0,_stretch_text_js__WEBPACK_IMPORTED_MODULE_3__.initStretchText)();
+        container.classList.remove('is-animate');
       }, ANIMATION_DURATION);
     }
   }]

@@ -1,0 +1,53 @@
+@use "mixins" as mixins;
+
+.hero {
+  --_height: 75vh;
+
+  @include mixins.breakpoint-up(xl) {
+    --_height: 100vh;
+  }
+
+  @supports(height: 100dvh) {
+    --_height: 75dvh;
+
+    @include mixins.breakpoint-up(xl) {
+    --_height: 100dvh;
+    }
+  }
+
+  > .container {
+    min-height: calc(var(--_height) - var(--offset-header));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  &-body {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    position: relative;
+
+    @include mixins.breakpoint-up(xl) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: end;
+      gap: 1rem;
+    }
+  }
+
+  &-start,
+  &-end {
+    padding-bottom: 2rem;
+  }
+
+  &-start {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    @include mixins.breakpoint-up(xl) {
+      position: initial;
+      bottom: initial;
+      right: initial;
+    }
+  }
+}

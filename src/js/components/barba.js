@@ -40,9 +40,9 @@ barba.init({
       gradientWipeEnter(container, ANIMATION_DURATION)
 
       setTimeout(() => {
-        container.classList.remove('is-animate')
         initHeader()
         initStretchText()
+        container.classList.remove('is-animate')
       }, ANIMATION_DURATION)
     }
   }]

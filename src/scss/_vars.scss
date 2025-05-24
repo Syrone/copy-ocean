@@ -6,9 +6,11 @@
   --content-width: 100%;
   --container-offset: 1rem;
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
+  --offset-header: 18rem;
 
   // sizes
   --fs-base: 1.25rem;
+  --fs-xxl: 2.5rem;
   --fw-base: 400;
   --lh-base: 1.2;
 
@@ -38,6 +40,7 @@
 @include mixins.breakpoint-up(md) {
   :root {
     --container-offset: 2rem;
+    --offset-header: 16.75rem;
 
     --h1: 4rem;
   }
@@ -45,6 +48,8 @@
 
 @include mixins.breakpoint-up(xl) {
   :root {
+    --offset-header: 14.375rem;
+
     --h1: 5rem;
   }
 }

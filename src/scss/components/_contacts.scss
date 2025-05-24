@@ -2,6 +2,18 @@
 
 .contacts {
 
+  &:not(:first-child) {
+    margin-top: calc(9rem + 25vh);
+
+    @include mixins.breakpoint-up(md) {
+      margin-top: calc(12.75rem + 25vh);
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      margin-top: calc(19rem + 25vh);
+    }
+  }
+
   .contacts-end,
   > .container {
     display: grid;

@@ -3,14 +3,14 @@
 .section {
 
   + .section {
-    margin-top: calc(9rem + 25vh);
+    margin-top: 3.75rem;
 
     @include mixins.breakpoint-up(md) {
-      margin-top: calc(12.75rem + 25vh);
+      margin-top: 5rem;
     }
 
     @include mixins.breakpoint-up(xl) {
-      margin-top: calc(19rem + 25vh);
+      margin-top: 7.5rem;
     }
   }
 
