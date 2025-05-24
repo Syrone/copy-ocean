@@ -38,6 +38,7 @@ barba.init({
 
       container.classList.add('is-animate')
       gradientWipeEnter(container, ANIMATION_DURATION)
+      window.scrollTo(0, 0)
 
       setTimeout(() => {
         initHeader()
