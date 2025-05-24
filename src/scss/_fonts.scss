@@ -1,0 +1,4 @@
+@use "mixins" as mixins;
+
+@include mixins.font-face("Inter-Display", "InterDisplay-Regular", 400, normal);
+@include mixins.font-face("Inter-Display", "InterDisplay-Medium", 500, normal);

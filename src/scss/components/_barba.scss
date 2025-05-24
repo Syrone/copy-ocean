@@ -1,0 +1,18 @@
+[data-barba="wrapper"] {
+  flex: 1 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+[data-barba="container"] {
+  mask-mode: alpha;
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+
+  &.is-animate {
+    user-select: none;
+    pointer-events: none;
+    position: absolute;
+  }
+}

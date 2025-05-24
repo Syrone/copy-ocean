@@ -1,0 +1,49 @@
+@use "mixins" as mixins;
+
+.contacts {
+
+  .contacts-end,
+  > .container {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2.5rem 1rem;
+
+    @include mixins.breakpoint-up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &-opening,
+  &-address {
+
+    p {
+      margin: 0;
+    }
+  }
+
+  &-address {
+    font-style: normal;
+  }
+
+  &-socials {
+    display: flex;
+    gap: 1rem;
+
+    &-title {
+      display: none;
+
+      @include mixins.breakpoint-up(xl) {
+        display: block;
+        font-size: inherit;
+        line-height: inherit;
+      }
+    }
+
+    &-list {
+
+      @include mixins.breakpoint-up(md) {
+        margin-left: auto;
+      }
+    }
+  }
+}

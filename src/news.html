@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ru" class="page">
+
+@include('partials/head.html', {title: 'News'})
+
+<body class="page-body">
+  <div data-barba="wrapper">
+    <div class="site-container" data-barba="container" data-barba-namespace="news">
+      @include('partials/header.html')
+
+      <main class="main">
+        @include('partials/h1.html', {title: 'News'})
+        <div class="main-sections">
+          <section class="section news">
+            <div class="container">
+              <div class="section-header">
+                <h2 class="section-title">
+                  News
+                </h2>
+              </div>
+
+              <ol class="list-reset news-list">
+                @loop('partials/cards/news.html', [
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                  {},
+                ])
+              </ol>
+            </div>
+          </section>
+
+          @include('partials/sections/contacts.html')
+        </div>
+      </main>
+
+
+      @include('partials/footer.html')
+    </div>
+  </div>
+</body>
+
+</html>

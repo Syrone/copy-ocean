@@ -1,0 +1,11 @@
+[data-stretch-text] {
+  width: 100%;
+  display: flex;
+  letter-spacing: -.05em;
+  white-space: nowrap;
+  overflow: hidden;
+
+  svg {
+    flex: 1 1;
+  }
+}

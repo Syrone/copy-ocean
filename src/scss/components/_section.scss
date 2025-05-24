@@ -1,0 +1,28 @@
+@use "mixins" as mixins;
+
+.section {
+
+  + .section {
+    margin-top: calc(9rem + 25vh);
+
+    @include mixins.breakpoint-up(md) {
+      margin-top: calc(12.75rem + 25vh);
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      margin-top: calc(19rem + 25vh);
+    }
+  }
+
+  &-header {
+    margin-bottom: 3.75rem;
+
+    @include mixins.breakpoint-up(md) {
+      margin-bottom: 5rem;
+    }
+
+    @include mixins.breakpoint-up(xl) {
+      margin-bottom: 7.5rem;
+    }
+  }
+}

@@ -1,0 +1,118 @@
+@use "mixins" as mixins;
+
+.btn {
+	--_width: initial;
+	--_height: initial;
+	--_fs: var(--fs-base);
+	--_fw: 400;
+	--_lh: normal;
+	--_ls: normal;
+	--_color: var(--text-color);
+	--_bg: transparent;
+	--_border-width: 0;
+	--_border-style: solid;
+	--_border-color: transparent;
+	--_rounded: 0;
+	--_padding: 0;
+	--_transition-duration: var(--transition-duration);
+	--_transition-timing-function: var(--transition-timing-function);
+
+	--_color-hover: var(--primary);
+	--_bg-hover: transparent;
+	--_border-color-hover: transparent;
+
+	--_color-active: var(--primary);
+	--_bg-active: transparent;
+	--_border-color-active: transparent;
+
+	--_icon-size: 1rem;
+	--_icon-color: currentColor;
+
+	width: var(--_width);
+	height: var(--_height);
+
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: .5rem;
+
+	font-size: var(--_fs);
+	font-weight: var(--_fw);
+	line-height: var(--_lh);
+	letter-spacing: var(--_ls);
+	color: var(--_color);
+  text-align: center;
+	cursor: pointer;
+	background-color: var(--_bg);
+	border: var(--_border-width) var(--_border-style) var(--_border-color);
+	border-radius: var(--_rounded);
+	padding: var(--_padding);
+	outline: none;
+	transition-property: color, text-shadow, background, border, transform, opacity;
+	transition-duration: var(--_transition-duration);
+	transition-timing-function: var(--_transition-timing-function);
+
+	@media (hover: hover) {
+		&:is(:hover, :focus-visible) {
+			color: var(--_color-hover);
+			background-color: var(--_bg-hover);
+			border-color: var(--_border-color-hover);
+		}
+	}
+
+	&:is(:active, .is-active) {
+		color: var(--_color-active);
+		background-color: var(--_bg-active);
+		border-color: var(--_border-color-active);
+	}
+
+	.icon {
+		--_size: var(--_icon-size);
+		--_color: var(--_icon-color);
+	}
+}
+
+.btn-menu {
+  min-height: 2.75rem;
+  min-width: 2.75rem;
+  position: relative;
+
+  span {
+    width: 1.25rem;
+    height: .125rem;
+    display: inline-block;
+    background-color: currentColor;
+    border-radius: .75rem;
+    position: absolute;
+    left: calc(50% - 1.25rem / 2);
+    transform: none;
+    transform-origin: 50% 50% 0rem;
+    will-change: transform;
+    transition-property: transform, top;
+    transition-duration: var(--_transition-duration);
+    transition-timing-function: var(--_transition-timing-function);
+
+    &:first-child {
+      top: calc(62.5% - .125rem / 2);
+    }
+
+    &:last-child {
+      top: calc(37.5% - .125rem / 2);
+    }
+  }
+
+  &.is-active {
+
+    span {
+      top: calc(50% - .125rem / 2);
+
+      &:first-child {
+        transform: rotate(-45deg);
+      }
+
+      &:last-child {
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

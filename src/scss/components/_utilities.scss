@@ -1,0 +1,38 @@
+img {
+  height: auto;
+  max-width: 100%;
+  display: inline-block;
+  object-fit: cover;
+}
+
+a {
+  text-decoration: none;
+}
+
+.scrollable-y {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  clip: rect(0 0 0 0);
+}
+
+.list-reset {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stretched-link {
+	position: absolute;
+	inset: 0;
+  z-index: 10;
+}

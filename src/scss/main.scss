@@ -1,0 +1,19 @@
+// базовые подключения
+@use "vars";
+@use "fonts";
+@use "settings";
+
+// подключения компонентов страницы
+@use "./components/barba";
+@use "./components/utilities";
+@use "./components/typography";
+@use "./components/containers";
+@use "./components/stretch-text";
+@use "./components/icons";
+@use "./components/buttons";
+@use "./components/section";
+@use "./components/header";
+@use "./components/portfolio";
+@use "./components/news";
+@use "./components/contacts";
+@use "./components/footer";

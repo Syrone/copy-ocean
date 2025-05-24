@@ -1,0 +1,64 @@
+@use "mixins" as mixins;
+
+.footer {
+  margin-top: 3.75rem;
+  padding-bottom: 2rem;
+
+  @include mixins.breakpoint-up(md) {
+    margin-top: 5rem;
+  }
+
+  @include mixins.breakpoint-up(xl) {
+    margin-top: 7.5rem;
+  }
+
+  > .container {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+
+    @include mixins.breakpoint-up(md) {
+      gap: 1.25rem;
+    }
+  }
+
+  &-header {
+    display: flex;
+    font-size: 5.675rem;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -.05em;
+  }
+
+  &-main {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 1rem;
+
+    @include mixins.breakpoint-up(md) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  &-nav {
+    order: -1;
+
+    @include mixins.breakpoint-up(md) {
+      order: initial;
+    }
+
+    &-list {
+
+      li {
+        display: inline-flex;
+
+        &:not(:last-child) {
+
+          &::after {
+            content: ',';
+          }
+        }
+      }
+    }
+  }
+}

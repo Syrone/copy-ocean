@@ -1,0 +1,100 @@
+@use "mixins" as mixins;
+
+.header {
+  width: 100%;
+  padding: 2rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1030;
+
+  > .container {
+    display: grid;
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+
+    @include mixins.breakpoint-up(lg) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+
+  &-main {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: .75rem;
+
+    @include mixins.breakpoint-up(lg) {
+      justify-content: initial;
+    }
+  }
+
+  &-nav {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 0fr;
+    transition-property: grid-template-rows;
+    transition-duration: var(--transition-duration);
+    transition-timing-function: var(--transition-timing-function);
+
+    @include mixins.breakpoint-up(lg) {
+      grid-template-rows: initial;
+    }
+
+    &.is-show {
+      grid-template-rows: 1fr;
+
+      @include mixins.breakpoint-up(lg) {
+        grid-template-rows: initial;
+      }
+    }
+
+    &-body {
+      overflow: hidden;
+
+      @include mixins.breakpoint-up(lg) {
+        overflow: initial;
+      }
+    }
+
+    &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+
+      @include mixins.breakpoint-up(lg) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+
+      .scrollable-y {
+        max-height: 10rem;
+      }
+    }
+
+    &-list {
+
+      > li {
+        display: inline-flex;
+
+        &:not(:last-child) {
+
+          &::after {
+            content: ',';
+          }
+        }
+      }
+    }
+  }
+
+  .btn-menu {
+
+    @include mixins.breakpoint-up(lg) {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      user-select: none;
+    }
+  }
+}
